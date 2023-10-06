@@ -30,7 +30,8 @@ export class UserMapper {
             score
         } = user;
 
-        mappedUser.internal_id = uuidv4(15);
+        const internalIdOutBuffer = uuidv4();
+        mappedUser.internal_id = internalIdOutBuffer.toString();
 
         Object.assign(mappedUser, {
             id,
