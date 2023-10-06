@@ -14,6 +14,10 @@ In the infrastructure layer, the TypeORM framework was used for handling the dat
 ## Running the app
 
 ```bash
+
+##Set up database local with docker-compose (you can edit credentials and ports in docker-compose.yml file)
+$ docker-compose up -d ## (set up postgres and pgadmin)
+
 # development
 $ npm run start
 
@@ -26,6 +30,23 @@ $ npm run start:prod
 important: you need a database connection for typeorm, I used postgres sql, but you are free to decide what you want 
 ```
 
+## Consumning the app
+this app can be consumed using both (rest http/graphql request) 
+
+### Consuming using http
+Please open http://localhost:5000/api/ and you can see something like this 
+[![N|Solid](./assets/swagger.jpg)](#)
+this is the defition http request example to consume the endpoints
+
+
+### Consuming using graphql
+Please open http://localhost:5000/graphql and you can see something like this 
+[![N|Solid](./assets/graphqlexample1.jpg)](#)
+[![N|Solid](./assets/graphqlexample2.jpg)](#)
+[![N|Solid](./assets/graphqlexample3.jpg)](#)
+
+
+this is the defition graphql request example to consume the mutations and queries
 ## Test
 
 ```bash
@@ -38,12 +59,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Endpoints
-Once you have the app up and running, you can access the Swagger documentation to explore the available endpoints. It's important to note that all endpoints are protected and require user authentication via Firebase.
-On the http://localhost:5000/api you can see this
-
-[![N|Solid](https://gcdnb.pbrd.co/images/9mAVxsjLjcVr.png?o=1)](https://swagger.io/)
 
 ## Stay in touch
 
