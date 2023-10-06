@@ -1,21 +1,15 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
-@Entity('users')
+@Entity(
+    'users'
+)
 export class Users {
-
     @PrimaryColumn({unique: true, primary: true})                                                                                   
     internal_id: string;
 
     @PrimaryColumn({ unique: true })
     id: number; 
-
-    @Column({ type: 'varchar', length: 255, nullable: true }) // Permitir nulo para campos opcionales
-    fullname: string | null;
-
-    @Column({ type: 'varchar', length: 255, unique: true })
-    email: string;
-
-    // Agregar otras propiedades del JSON como columnas si son relevantes para tu aplicación
+        
     @Column({ type: 'varchar', length: 255, nullable: true })
     login: string | null;
 

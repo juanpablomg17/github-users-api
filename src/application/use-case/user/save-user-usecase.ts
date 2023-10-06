@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 
-import { SaveUserCommand } from '../../cqrs/command/user/create-user.command'
+import { SaveUserCommand } from '../../cqrs/command/user/save-user.command'
 import { UserMapper } from '../../mapper/user-mapper';
 import { SaveUserDto } from './dto/save-user.dto'
 import { UseCase } from '../../../domain/interface/IUseCase';
@@ -21,7 +21,10 @@ export class SaveUserUsecase implements UseCase<Input, Output> {
     ) { }
 
     async execute(input: Input): Promise<Output> {
-        const user = await this.getUserUseCase.execute(input)
+        const user = await this.getUserUseCase.execute({
+            id: input.id,
+            login: input.login
+        })
         if (user.length > 0) {
             throw new HttpException('User already exists', HttpStatus.BAD_REQUEST)
         }

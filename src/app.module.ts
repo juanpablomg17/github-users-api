@@ -9,7 +9,6 @@ import { InfrastructureModule } from './infrastucture/infrastucture.module';
 import { DataBaseModule } from './database/database.module';
 import config from './config/config';
 import { enviroments } from './config/environments';
-import { PreauthMiddleware } from './auth/preauth.middleware';
 
 @Module({
     imports: [
@@ -29,10 +28,5 @@ import { PreauthMiddleware } from './auth/preauth.middleware';
         },
     ],
 })
-export class AppModule implements NestModule {
-    configure(consumer: MiddlewareConsumer) {
-        consumer.apply(PreauthMiddleware).forRoutes({
-          path: '*', method: RequestMethod.ALL
-        });
-      }
+export class AppModule {
 }

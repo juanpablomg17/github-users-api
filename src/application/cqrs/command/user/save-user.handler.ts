@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 
 import { IUserRepository, USER_REPOSITORY } from '../../../../domain/interface/IUser';
 import { Users } from '../../../../infrastucture/repository/user/user.model';
-import { SaveUserCommand } from './create-user.command';
+import { SaveUserCommand } from './save-user.command';
 
 @CommandHandler(SaveUserCommand)
 export class SaveUserHandler implements ICommandHandler<SaveUserCommand, Users> {
