@@ -1,13 +1,13 @@
 import { Users } from "src/infrastucture/repository/user/user.model";
 import { SaveUserDto } from "../use-case/user/dto/save-user.dto";
 import { v4 as uuidv4 } from 'uuid';
+import { CreateUserInput } from "../use-case/user/dto/save-user.input.dto";
 
 
 export class UserMapper {
-    public static toPersistance(user: SaveUserDto): Users {
+    public static toPersistance(user: SaveUserDto | CreateUserInput): Users {
         const mappedUser = new Users();
-
-        // Mapear los campos comunes entre SaveUserDto y Users
+        
         const {
             login,
             id,
@@ -30,7 +30,8 @@ export class UserMapper {
             score
         } = user;
 
-        mappedUser.internal_id = uuidv4(15);
+        const internalIdOutBuffer = uuidv4();
+        mappedUser.internal_id = internalIdOutBuffer.toString();
 
         Object.assign(mappedUser, {
             id,

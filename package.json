@@ -27,11 +27,15 @@
     "node": "16.x"
   },
   "dependencies": {
+    "@apollo/gateway": "^2.5.5",
+    "@apollo/server": "^4.9.4",
+    "@nestjs/apollo": "^12.0.9",
     "@nestjs/axios": "^2.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/cqrs": "^9.0.3",
+    "@nestjs/graphql": "^12.0.9",
     "@nestjs/jwt": "^10.0.3",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^6.3.0",
@@ -39,10 +43,12 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "firebase-admin": "^11.8.0",
+    "graphql": "^16.8.1",
     "mssql": "^9.1.1",
     "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
+    "ts-morph": "^19.0.0",
     "ttypescript": "^1.5.15",
     "typeorm": "^0.3.16",
     "uid": "^2.0.2"

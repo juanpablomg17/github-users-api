@@ -12,6 +12,7 @@ import { UseCases } from './use-case/use-cases';
 
 
 import { Controllers } from './controllers/controller';
+import { UserResolver } from './resolvers/user/user.resolver';
 
 @Module({
     imports: [
@@ -25,6 +26,7 @@ import { Controllers } from './controllers/controller';
         ...UseCases,
         ...CommandHandlers,
         ...QueryHandlers,
+        UserResolver,
         
     ],
 })
