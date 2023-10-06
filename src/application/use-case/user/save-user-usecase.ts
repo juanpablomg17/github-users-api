@@ -4,13 +4,14 @@ import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { SaveUserCommand } from '../../cqrs/command/user/save-user.command'
 import { UserMapper } from '../../mapper/user-mapper';
 import { SaveUserDto } from './dto/save-user.dto'
+import { CreateUserInput } from './dto/save-user.input.dto'
 import { UseCase } from '../../../domain/interface/IUseCase';
 import { GetUsersUseCase } from './get-user-usecase'
-import { UserService } from '../../../domain/user/services/user.service'
 
 
 
-type Input = SaveUserDto
+
+type Input = SaveUserDto | CreateUserInput
 type Output = void
 
 @Injectable()
