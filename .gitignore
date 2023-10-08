@@ -37,7 +37,6 @@ lerna-debug.log*
 
 /postgres_data
 
-.env
 .env.prod.env
 
 node_modules
