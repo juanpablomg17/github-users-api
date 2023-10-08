@@ -1,4 +1,4 @@
-import { Users } from "src/infrastucture/repository/user/user.model";
+import { Users } from "../../infrastucture/repository/user/user.model";
 import { SaveUserDto } from "../use-case/user/dto/save-user.dto";
 import { v4 as uuidv4 } from 'uuid';
 import { CreateUserInput } from "../use-case/user/dto/save-user.input.dto";
