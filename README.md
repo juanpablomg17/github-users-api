@@ -60,6 +60,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Nodejs version
+- 16.x or 18.x
+
 ## Stay in touch
 
 - Author  - Juan Pablo meza (Flexuxs)
